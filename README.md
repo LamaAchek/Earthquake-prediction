@@ -1,45 +1,46 @@
 Earthquake Prediction with XGBoost
-This project implements a machine learning pipeline designed to predict earthquake occurrences using historical seismic data. The objective is to classify whether an earthquake exceeding a specific magnitude threshold (e.g., 2.5) will occur within the next seven days. The model leverages engineered features such as rolling statistics, exponential moving averages, and historical patterns to inform predictions.
-
-Project Features
-Model: XGBoost Classifier with performance evaluated using AUC (Area Under the Curve)
-
-Temporal Feature Engineering:
-
-Rolling statistics (mean and count) with window sizes of 3, 7, and 14 days
-
-Exponential Weighted Moving Averages (EWMA) of seismic attributes
-
-Database Integration: Utilizes SQLite to store processed features and prediction outputs
-
-Evaluation Metrics:
-
-AUC score
-
-ROC curve visualization for model performance assessment
-
-Prediction View:
-
-Geographic display of predicted earthquake events based on latitude and longitude
-
-Problem Framing: Binary classification for earthquake events, with a configurable magnitude threshold (default: 2.5)
-
-System Requirements
-Python 3.7 or higher
-
-Required Python packages:
-
-pandas
-
-numpy
-
-xgboost
-
-sqlalchemy
-
-matplotlib
-
-sqlite3 (built-in with Python)
-
-To install all dependencies, run:
+________________________________________
+Overview
+This project implements a machine learning pipeline to predict earthquake events using historical seismic data. The goal is to classify whether an earthquake above a configurable magnitude threshold (e.g., 2.5) will occur within the next 7 days.
+Using a combination of rolling statistics, exponential weighted moving averages (EWMA), and past patterns, the model identifies early signals of seismic activity.
+________________________________________
+1. Key Features
+ Model
+•	XGBoost Classifier
+•	Evaluated using AUC (Area Under the Curve) and ROC Curve metrics
+Temporal Feature Engineering
+•	Rolling statistics (mean and count) with window sizes of 3, 7, and 14 days
+•	Exponential Weighted Moving Averages (EWMA) for key seismic indicators
+Database Integration
+•	Uses SQLite to store:
+o	Engineered features
+o	Model predictions
+o	Evaluation results
+ Prediction View
+•	Displays geographic coordinates (latitude, longitude) of predicted events
+•	Can be visualized on a map interface or integrated with real-time dashboards
+ Classification Approach
+•	Binary classification:
+o	1 → Earthquake ≥ 2.5 magnitude
+o	0 → No significant earthquake
+•	Magnitude threshold is configurable
+________________________________________
+2. System Requirements
+Software Dependencies
+•	Python 3.7+
+•	pandas
+•	numpy
+•	xgboost
+•	sqlalchemy
+•	matplotlib
+•	sqlite3 (built-in with Python)
+ Installation
+Use the following command to install all required packages:
 pip install pandas numpy xgboost sqlalchemy matplotlib
+________________________________________
+3. Applications and Use Cases
+•	Early earthquake alert systems
+•	Disaster preparedness platforms
+•	Integration with geospatial dashboards
+•	Academic and government research on seismic trends
+
