@@ -1,3 +1,16 @@
+# Earthquake Prediction with XGBoost
+
+This project implements a machine learning pipeline to predict earthquake events using historical seismic data. 
+
+The primary objective is to classify whether an earthquake exceeding a configurable magnitude threshold (e.g., 2.5) will occur within the next **7-day window**. 
+
+The model leverages:
+- **Rolling statistics** (mean and count)
+- **Exponential Weighted Moving Averages (EWMA)**
+- **Temporal seismic patterns**
+
+These engineered features help identify early signals of seismic activity and improve the accuracy of earthquake prediction.
+
 ## 1. Key Features
 
 ### Model
